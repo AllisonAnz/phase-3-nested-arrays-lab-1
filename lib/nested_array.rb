@@ -15,27 +15,34 @@ CONVENTIONAL_PRODUCE = [
   "Watermelon",
   "Eggplant"
 ]
-
+#  the assembled_matrix method returns a nested array made from two constants, CONVENTIONAL_PRODUCE and ORGANIC_PRODUC
+#   the sorted_matrix method returns a nested array made from two constants with sorted elements 
 def assembled_matrix
   # Build an array that contains both of the above arrays
   # This matrix will represent a produce storage room
   # Organic standards require that organic products be stored ABOVE conventional, not the other way around
   # Make sure conventional produce is first, on the 'zeroth' / 'bottom' shelf
+   [CONVENTIONAL_PRODUCE, ORGANIC_PRODUCE]
 end
+# puts assembled_matrix
 
 def sorted_matrix
   # Using Array literal syntax only, build another nested array that 
   # uses the arrays of conventional and organic produce as before.
   # However, this time, sort each internal array alphabetically by the first character
+  [CONVENTIONAL_PRODUCE.sort, ORGANIC_PRODUCE.sort]
 end
 
 def matrix_lookup(matrix, row, column)
   # Given any matrix (array of arrays), a row index and a column index, 
   # Return the matrix's content at that row and and column
+  matrix[row][column]
 end
 
 def matrix_update(matrix, row, column, new_value)
   # Given any matrix (array of arrays), a row index and a column index, 
   # Update the matrix location at that row and column to have the value of new_value
   # Return the updated matrix
+   matrix[row][column] = new_value
+  matrix
 end
